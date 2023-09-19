@@ -16,7 +16,7 @@ func getGoroutineID() int64 {
 	return id
 }
 
-func Println(a ...any) (int, error) {
+func Println(a ...interface{}) (int, error) {
 	callerFuncName := "unknow"
 	pc, file, line, ok := runtime.Caller(1)
 	fileNameSlice := strings.Split(file, "/")
@@ -32,7 +32,7 @@ func Println(a ...any) (int, error) {
 	return 0, nil
 }
 
-func Printf(format string, a ...any) (int, error) {
+func Printf(format string, a ...interface{}) (int, error) {
 	callerFuncName := "unknow"
 	pc, file, line, ok := runtime.Caller(1)
 	fileNameSlice := strings.Split(file, "/")
