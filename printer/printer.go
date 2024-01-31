@@ -25,7 +25,7 @@ func Println(a ...interface{}) (int, error) {
 		if fn != nil {
 			callerFuncName = fn.Name()
 		}
-		fmt.Printf(" %s [%d]	--- \033[1;34;40m %s:%s:%d \033[0m		:",
+		fmt.Printf(" %s [%d]	--- \033[1;34m %s:%s:%d \033[0m		:",
 			time.Now().Format("2006-01-02 15:04:05.999"), getGoroutineID(), fileNameSlice[len(fileNameSlice)-1], callerFuncName, line)
 		return fmt.Println(a...)
 	}
@@ -41,7 +41,7 @@ func Printf(format string, a ...interface{}) (int, error) {
 		if fn != nil {
 			callerFuncName = fn.Name()
 		}
-		fmt.Printf(" %s [%d]	--- \033[1;34;40m %s:%s:%d \033[0m		:",
+		fmt.Printf(" %s [%d]	--- \033[1;34m %s:%s:%d \033[0m		:",
 			time.Now().Format("2006-01-02 15:04:05.999"), getGoroutineID(), fileNameSlice[len(fileNameSlice)-1], callerFuncName, line)
 		return fmt.Printf(format, a...)
 	}
